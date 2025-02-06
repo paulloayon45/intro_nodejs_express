@@ -4,6 +4,11 @@ const port = 3000;
 
 app.use(express.json());
 
+app.use((req, res, next) =>{
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
+
 app.post('/submit', (req,res)=> {
     const data = req.body;
     res.send(`Received: ${JSON.stringify(data)}`);
