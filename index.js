@@ -19,6 +19,12 @@ app.use((err, req, res, next) =>{
     res.status(500).send('Something broke!');
 });
 
+app.post('/post', (req, res) =>{
+    const newItem = req.body.item;
+    items.push(newItem);
+    res.json(items);
+});
+
 app.post('/submit', (req,res)=> {
     const data = req.body;
     res.send(`Received: ${JSON.stringify(data)}`);
