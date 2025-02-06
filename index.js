@@ -9,6 +9,11 @@ app.use((req, res, next) =>{
     next();
 });
 
+app.use((err, req, res, next) =>{
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
 app.post('/submit', (req,res)=> {
     const data = req.body;
     res.send(`Received: ${JSON.stringify(data)}`);
