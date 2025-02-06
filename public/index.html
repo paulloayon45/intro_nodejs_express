@@ -21,7 +21,7 @@
             e.preventDefault();
             const item = input.value.trim();
             if(item) {
-                await fetch('items', {
+                await fetch('/items', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify({ item })
