@@ -19,7 +19,7 @@ app.use((err, req, res, next) =>{
     res.status(500).send('Something broke!');
 });
 
-app.post('/post', (req, res) =>{
+app.post('/items', (req, res) =>{
     const newItem = req.body.item;
     items.push(newItem);
     res.json(items);
